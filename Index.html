@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script
+      src="https://kit.fontawesome.com/53130ddfac.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Roll</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Joan&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-indigo-600 to-purple-700">
+    <div
+      id="headline"
+      class="text-emerald-400 font-bold flex justify-center tracking-wider px-12 pb-12 pt-5"
+      style="font-family: 'Joan', serif; font-size: 7rem"
+    >
+      <!--Headline-->
+      <p id="pp" class="visible">
+        😉 <span class="underline">Roll Me Up</span> 😉
+      </p>
+      <p id="p1" class="hidden">
+        😝 <span class="underline">Player 1 Wins</span> 😝
+      </p>
+      <p id="p2" class="hidden">
+        😝 <span class="underline">Player 2 Wins</span> 😝
+      </p>
+      <p id="p" class="hidden">😑 <span class="underline">Draw!!</span> 😑</p>
+    </div>
+
+    <div
+      class="flex justify-evenly text-yellow-500 font-semibold w-full text-2xl"
+    >
+      <!--Game-->
+
+      <div id="d1" class="w-96">
+        <!--Dice 1-->
+        <p
+          class="flex justify-center text-4xl underline"
+          style="font-family: 'Joan', serif"
+        >
+          Player 1
+        </p>
+        <div class="bg-rose-900 mx-auto rounded-3xl w-56 h-56 my-12">
+          <div
+            id="16"
+            class="grid grid-cols-2 gap-2 justify-items-center visible"
+          >
+            <!--6-->
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+          </div>
+
+          <div id="15" class="flex flex-col hidden">
+            <!--5-->
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+          </div>
+
+          <div id="14" class="flex flex-col hidden">
+            <!--4-->
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+
+          <div id="13" class="flex flex-col hidden">
+            <!--3-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl ml-28 mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+          </div>
+
+          <div id="12" class="flex flex-col hidden">
+            <!--2-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl ml-28 mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+
+          <div id="11" class="flex flex-col hidden">
+            <!--1-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="text-white font-bold items-center flex justify-center"
+        style="font-size: 10rem"
+      >
+        <i id="great" class="fa-solid fa-greater-than hidden"></i>
+        <i id="small" class="fa-solid fa-less-than hidden"></i>
+        <i id="equal" class="fa-solid fa-equals visible"></i>
+      </div>
+
+      <div id="d2" class="w-96">
+        <!--Dice 2-->
+        <p
+          class="flex justify-center text-4xl underline"
+          style="font-family: 'Joan', serif"
+        >
+          Player 2
+        </p>
+        <div class="bg-rose-900 mx-auto rounded-3xl w-56 h-56 my-12">
+          <div
+            id="26"
+            class="grid grid-cols-2 gap-2 justify-items-center visible"
+          >
+            <!--6-->
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+          </div>
+
+          <div id="25" class="flex flex-col hidden">
+            <!--5-->
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+          </div>
+
+          <div id="24" class="flex flex-col hidden">
+            <!--4-->
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+
+          <div id="23" class="flex flex-col hidden">
+            <!--3-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl ml-28 mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-4"></div>
+            </div>
+          </div>
+
+          <div id="22" class="flex flex-col hidden">
+            <!--2-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center">
+              <div class="bg-white h-12 w-12 rounded-3xl ml-28 mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+
+          <div id="21" class="flex flex-col hidden">
+            <!--1-->
+            <div class="grid grid-cols-1 gap-2 justify-items-center mt-16">
+              <div class="bg-white h-12 w-12 rounded-3xl mt-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <button
+        type="button"
+        id="play"
+        class="p-5 bg-orange-500 px-12 my-4 font-bold text-4xl text-white rounded-3xl border border-white border-4 hover:bg-orange-600"
+        style="font-family: 'Joan'"
+      >
+        Click to Play
+      </button>
+    </div>
+
+    <div
+      class="flex justify-around text-white text-3xl font-bold tracking-widest"
+      style="font-family: 'Joan'"
+    >
+      <div id="s1" class="bg-teal-900 p-3 rounded-xl">Player 1 Score : 0</div>
+      <div id="s2" class="bg-teal-900 p-3 rounded-xl">Player 2 Score : 0</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
